@@ -1,0 +1,184 @@
+.spes {
+    margin-bottom: 100px;
+    display: inline-block;
+    margin-top: 70px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.44);
+}
+
+.face {
+    width: 125px;
+    vertical-align: middle;
+    border-radius: 100px;
+    margin-right: 10px;
+}
+
+.isi {
+    font-size: 50px;
+    vertical-align: middle;
+    border-style: none;
+    outline: none; 
+    margin-right: 0;
+}
+
+.isi::placeholder {
+    font-size: 40px;  
+}
+
+.post{
+    background-color: rgb(0, 148, 254);
+    border-style: none;
+    padding: 20px 46px 20px 46px;
+    color: white;
+    border-radius: 45px;
+    font-weight: bold;
+    font-size: 30px;
+    cursor: pointer;
+    margin-left: 0;
+    transition: box-shadow 0.15s;
+    vertical-align: middle;
+
+}
+
+.post:hover{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.post:active {
+    opacity: 0.7;
+}
+
+.logo {
+    width: 325px;
+    display: block;
+    margin-left: 470px;
+}
+
+.search {
+    width: 590px;
+    height: 40px;
+    margin-left: 336px;
+    margin-top: 5px;
+    border-radius: 20px;
+    border-style: none;
+    font-size: 16px;
+    padding-left: 15px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.search:hover {
+    box-shadow:  0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+
+}
+
+.search:active {
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+    border-style: none;
+}
+
+.search::placeholder {
+    padding-left: 1px;
+    font-size: 16px;
+}
+
+.separate {
+    font-family: Arial;
+    display: inline-block;
+    margin-right: 40px;
+}
+
+.separate2 {
+    font-family: Arial;
+    background-color: rgb(18, 17, 17);
+    color: white;
+    display: inline-block;
+    padding: 12px;
+    margin-bottom: 400px;
+}
+
+.prag1 {
+    font-weight: bold;
+    font-size: 27px;
+}
+
+.prag2 {
+    color: rgb(155, 155, 155);
+    font-size: 17px;
+    width: 390px;
+}
+
+.req {
+    margin-top: 100px;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.input {
+    background-color: rgb(238, 238, 238);
+    border-style: none;
+    border-radius: 1px;
+    width: 290px;
+    height: 30px;
+    display: block;
+    margin-bottom: 7px;
+    outline: none;
+    padding-left: 12px;
+}
+
+.input::placeholder {
+    padding-left: 2px;
+}
+
+.uber {
+    background-color: black;
+    color: white;
+    height: 38px;
+    width: 116px;
+    margin-top: 8px;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.15s;
+}
+
+.uber:hover {
+    opacity: 0.7;
+}
+
+.uber2 {
+    height: 38px;
+    width: 140px;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 15px;
+    transition: opacity 0.15s;
+}
+
+.uber2:hover {
+    opacity: 0.7;
+}
+
+.kotakbesar {
+    width: 1100px;
+    height: 290px;
+    border: 2px solid black;
+    position: relative;
+}
+
+.kotakasal {
+    position: absolute;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    bottom: 0;
+    right: 0;
+
+}
+
+.gambar {
+    border: 2px solid black;
+    border-radius: 3px;
+}

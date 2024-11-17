@@ -1,0 +1,124 @@
+body {
+    background-image: url('../background/green.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+
+.grid-pic {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    column-gap: 30px;
+    row-gap: 50px;
+}
+
+.finished {
+    margin-top: 10px;
+    box-shadow:  0px 0px 5px 0px rgba(0,0,0,0.7);
+    border-radius: 5px;
+    font-family: Arial;
+    background-color: white;
+
+}
+
+.profile-pic {
+    width: 100%;
+}
+
+
+.name {
+    padding-left: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 6px;
+    margin-bottom: 0;
+}
+
+.mutual-friend,
+.mutual-pro {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.mutual-friend {
+    color: rgb(138, 135, 135);
+}
+
+.mutual-pro {
+    width: 50px;
+    margin-left: 3px;
+
+}
+
+.img-pro {
+    border-radius: 50px;
+    width: 40px;
+    padding-left: 3px;
+    vertical-align: middle;
+    margin-left: 3px;
+}
+
+.grid-info {
+    display: grid;
+    grid-template-columns: 130px 130px;
+    flex-direction: row;
+    column-gap: 5px;
+    margin-top: 20px;
+
+}
+
+.add-friend {
+    margin-top: 8px;
+    margin-left: 12px;
+    margin-bottom: 9px;
+    background-color: rgb(52, 120, 223);
+    border-style: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 130px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.add-friend:hover {
+    opacity: 0.8;
+}
+
+.add-friend:active {
+    background-color: rgb(32, 90, 178);
+    
+}
+
+.add-friend:clicked {
+    background-color: red;
+}
+
+.show-info {
+    height: 40px;
+    width: 130px;
+    background-color: white;
+    color: rgb(52, 120, 223);
+    border-style: solid;
+    border-color: rgb(52, 120, 223);
+    border-radius: 5px;
+    margin-top: 8px;
+    margin-left: 12px;
+    margin-bottom: 9px;
+    font-weight: 700;
+    transition: background-color 0.15s;
+    cursor: pointer;
+}
+
+.show-info:hover {
+    opacity: 0.7
+}
+
+.show-info:active {
+    background-color: rgb(52, 120, 223);
+    color: white;
+}
