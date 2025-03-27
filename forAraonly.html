@@ -15,9 +15,24 @@
 
     body {
       font-family: 'Quicksand', sans-serif;
-      background: #ffeef2;
+      background: linear-gradient(-45deg, #ffeef2, #ffb6c1, #ffd6e1, #ffc0cb);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
       overflow-x: hidden;
     }
+
+    @keyframes colorChange {
+        0% { background-color: #ffeef2; }
+        25% { background-color: #ffb6c1; }
+        50% { background-color: #ffd6e1; }
+        75% { background-color: #ffc0cb; }
+        100% { background-color: #ffeef2; }
+    }
+
+    body {
+        animation: colorChange 10s infinite alternate;
+    }
+
 
     .center {
       display: flex;
@@ -26,6 +41,7 @@
       height: 100vh;
       flex-direction: column;
       position: relative;
+      text-align: center;
     }
 
     .hearts {
@@ -34,6 +50,9 @@
       display: flex;
       gap: 10px;
       animation: float 2s ease-in-out infinite;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
     }
 
     .hearts span {
@@ -82,13 +101,13 @@
       background-color: white;
       border-radius: 20px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      padding: 40px;
-      margin: 50px auto;
-      max-width: 80%;
+      padding: 60px;
+      margin: 100px auto;
+      max-width: 90%;
       opacity: 0;
       transform: translateX(100%);
       transition: all 0.8s ease;
-      font-size: 24px;
+      font-size: 26px;
     }
 
     .card.left {
@@ -111,6 +130,16 @@
       cursor: pointer;
     }
 
+    .end-animation {
+      animation: pop 1s ease forwards;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
     @media (max-width: 600px) {
       .headline {
         font-size: 30px;
@@ -127,9 +156,7 @@
 <body>
   <div class="center" id="landing">
     <div class="hearts">
-      <span>❤️</span>
-      <span>💖</span>
-      <span>💕</span>
+      <span>❤️</span><span>💖</span><span>💕</span><span>🥰</span><span>🌸</span><span>🎀</span><span>💌</span>
     </div>
     <button id="startBtn">Click here for surprise!!</button>
   </div>
@@ -171,18 +198,8 @@
       const end = Date.now() + duration;
 
       (function frame() {
-        confetti({
-          particleCount: 3,
-          angle: 60,
-          spread: 55,
-          origin: { x: 0 }
-        });
-        confetti({
-          particleCount: 3,
-          angle: 120,
-          spread: 55,
-          origin: { x: 1 }
-        });
+        confetti({ particleCount: 3, angle: 60, spread: 55, origin: { x: 0 } });
+        confetti({ particleCount: 3, angle: 120, spread: 55, origin: { x: 1 } });
         if (Date.now() < end) {
           requestAnimationFrame(frame);
         }
@@ -196,6 +213,11 @@
           card.classList.add('show');
         }
       });
+
+      // Check if at bottom
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
+        document.querySelector('.final-btn').classList.add('end-animation');
+      }
     });
 
     document.getElementById('presentBtn').addEventListener('click', () => {
@@ -203,8 +225,9 @@
     });
 
     function playMusic() {
-      const audio = new Audio('GreatFairy.mp3');
+      const audio = new Audio('DearlyBeloved.mp3');
       audio.loop = true;
+      audio.volume = 0.3;
       audio.play();
     }
   </script>
