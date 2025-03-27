@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Fahra!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: #ffeef2;
+      overflow-x: hidden;
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .hearts {
+      position: absolute;
+      top: 10%;
+      display: flex;
+      gap: 10px;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .hearts span {
+      font-size: 30px;
+      color: #ff7aa2;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+
+    button {
+      padding: 15px 30px;
+      background-color: #ff7aa2;
+      border: none;
+      border-radius: 50px;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    .headline {
+      font-size: 45px;
+      color: #ff3e6c;
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .cards {
+      margin: 50px 0;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      margin: 50px auto;
+      max-width: 80%;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: all 0.8s ease;
+      font-size: 24px;
+    }
+
+    .card.left {
+      transform: translateX(-100%);
+    }
+
+    .card.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .final-btn {
+      margin: 50px;
+      padding: 15px 30px;
+      background-color: #ff7aa2;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .headline {
+        font-size: 30px;
+      }
+
+      .card {
+        padding: 30px;
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="center" id="landing">
+    <div class="hearts">
+      <span>❤️</span>
+      <span>💖</span>
+      <span>💕</span>
+    </div>
+    <button id="startBtn">Click here for surprise!</button>
+  </div>
+
+  <div id="main" style="display: none; text-align: center;">
+    <h1 class="headline">Happy Birthday, Araaaaa! 🎂🎈</h1>
+
+    <div id="confetti"></div>
+
+    <div class="cards">
+      <div class="card left">😺😺Today is your special day but i guess everyday is special with you, you have done so much for so many people including me so thank you so so so much for it!😺😺</div>
+      <div class="card right">💪🏻Please keep yourself healthy and happy! i know that not all day can be a happy day but i also know that you will survive through any day that the world gave you</div>
+      <div class="card left">🌺🌺Thank you so much for being born in this world, your presence can bring happiness to everyone in this world without a doubt🌺🌺</div>
+      <div class="card right">🌼🌼I really hope you will accomplish anything you want and make all your wish come true! i know that someday you will achieve that, i never doubted you🌼🌼</div>
+      <div class="card left">🏍Dont forget that you can always count on me if something happen or if you want some help, i will be there for you!🏍</div>
+      <div class="card right">🎴BE SAFE AND BE FREE ARAAAAA🎴</div>
+      <div class="card left">💗And as always i want you to keep smiling because its the best in the universe! (Smile suits you better!)💗</div>
+    </div>
+
+    <button class="final-btn" id="presentBtn">Click here!</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    const startBtn = document.getElementById('startBtn');
+    const landing = document.getElementById('landing');
+    const main = document.getElementById('main');
+    const cards = document.querySelectorAll('.card');
+
+    startBtn.addEventListener('click', () => {
+      landing.style.display = 'none';
+      main.style.display = 'block';
+      startConfetti();
+      playMusic();
+    });
+
+    function startConfetti() {
+      const duration = 3 * 1000;
+      const end = Date.now() + duration;
+
+      (function frame() {
+        confetti({
+          particleCount: 3,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 }
+        });
+        confetti({
+          particleCount: 3,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 }
+        });
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
+    }
+
+    window.addEventListener('scroll', () => {
+      cards.forEach(card => {
+        const cardPos = card.getBoundingClientRect().top;
+        if (cardPos < window.innerHeight - 50) {
+          card.classList.add('show');
+        }
+      });
+    });
+
+    document.getElementById('presentBtn').addEventListener('click', () => {
+      alert('I will give you something so please be patient.. 🎁');
+    });
+
+    function playMusic() {
+      const audio = new Audio('your-music.mp3');
+      audio.loop = true;
+      audio.play();
+    }
+  </script>
+</body>
+
+</html>
