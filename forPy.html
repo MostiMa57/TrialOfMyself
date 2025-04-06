@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      max-width: 90%;
+      width: 400px;
+      text-align: center;
+    }
+
+    .message-box {
+      width: 100%;
+      min-height: 150px;
+      border-radius: 10px;
+      padding: 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      font-family: inherit;
+      background-color: #f9f9f9;
+      white-space: pre-wrap;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff6f91;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff477e;
+    }
+
+    #surpriseImage {
+      margin-top: 2rem;
+      max-width: 90%;
+      width: 300px;
+      display: none;
+      margin-left: auto;
+    margin-right: auto;
+    display: block;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="goofyahh.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <canvas id="confettiCanvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></canvas>
+
+  <div class="card">
+    <h2>🎉 Happy Birthday! 🎂</h2>
+    <div class="message-box">
+Halo Yuripee,
+
+      Selamat ultah yaa, ciee udh kepala 2 aja ya gk terasa ntar lagi punya anak. Aku doain dirimu sehat selalu dan bisa dapetin apa yg dirimu mau, jgn sering marah2 jg ya (plis)
+
+      🎈 Dari sapalagi kalo bukan, Pak Andy
+    </div>
+    <br />
+    <button onclick="showSurprise()">Click for a Surprise!</button>
+    <img id="surpriseImage" src="SELAMAT.png" alt="Surprise Image" />
+  </div>
+
+  <script>
+    function showSurprise() {
+      const img = document.getElementById('surpriseImage');
+      img.style.display = 'block';
+      startConfetti();
+    }
+
+    
+    const canvas = document.getElementById('confettiCanvas');
+    const ctx = canvas.getContext('2d');
+    let confetti = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function startConfetti() {
+      confetti = Array.from({ length: 150 }, () => createConfetto());
+      requestAnimationFrame(updateConfetti);
+    }
+
+    function createConfetto() {
+      return {
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height - canvas.height,
+        r: Math.random() * 6 + 4,
+        d: Math.random() * 10 + 5,
+        color: `hsl(${Math.random() * 360}, 100%, 50%)`,
+        tilt: Math.random() * 10 - 5,
+        tiltAngle: 0,
+        tiltAngleIncrement: Math.random() * 0.1 + 0.05
+      };
+    }
+
+    function updateConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < confetti.length; i++) {
+        const c = confetti[i];
+        c.y += Math.cos(c.d / 2);
+        c.tiltAngle += c.tiltAngleIncrement;
+        c.tilt = Math.sin(c.tiltAngle) * 15;
+        ctx.beginPath();
+        ctx.strokeStyle = c.color;
+        ctx.lineWidth = c.r;
+        ctx.moveTo(c.x + c.tilt + c.r / 2, c.y);
+        ctx.lineTo(c.x + c.tilt, c.y + c.tilt + c.r / 2);
+        ctx.stroke();
+      }
+      requestAnimationFrame(updateConfetti);
+    }
+  </script>
+</body>
+</html>
