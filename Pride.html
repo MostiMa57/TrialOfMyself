@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/Pride.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sundanese:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="upperHead">
+        <div class="profileContainer">
+            <div class="profilepic">
+                <img class="picture" src="../WebLearn Part 2/imagesF/oreKao.jpg" alt="justme">
+            </div>
+            <h1 class="myName">ARIQ SYAUQI</h1>
+            <div class="boxParagraf">
+                <p class="paragraf">Just an ordinary guy</p>
+                <p class="paragraf">Who loves to do random things that also beneficial to others</p>
+            </div>
+        </div>
+    </div>
+    <div class="middleWrapper">
+        <div class="middleMain">
+            <div class="leftSide">
+                <div class="imgCat">
+                    <img src="images/meowmelon.jpg" alt="meowlon">
+                </div>
+            </div>
+            <div class="rightSide">
+                <div class="aboutMe">
+                    <h1>WHO AM I?</h1>
+                    <hr>
+                    <div class="miniText">
+                        <p>I'm just your average 21 years old Mabarian that somehow kinda passionate about learning new things especially the fun stuff, 
+                        right now i'm looking for finding those who's interested in game-making but i can also do some front-end, back-end, or even creating an app (don't be too hopeful tho)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mySkill">
+        <h1>Some skill that i got</h1>
+        <div class="skillContainer">
+            <h1>1. Web Making</h1>
+            <div class="imgSkill">
+                <img src="images/htmlIcon.svg" alt="html">
+                <img src="images/cssIcon.svg" alt="css">
+                <img src="images/jsIcon.svg" alt="js">
+            </div>
+            <p>Still not on expert level but i've made quite a bunch of mini personal project that i do (usually for fun) on making a website, i haven't learn the framework yet because currently interested in game making.
+                But that doesn't mean i will stop learning to be a full-stack developer
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+
+        const middle = document.querySelector('.middleWrapper');
+        observer.observe(middle);
+    </script>
+
+</body>
+</html>
