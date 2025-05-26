@@ -108,7 +108,7 @@ body::-webkit-scrollbar {
 
 .leftSide, .rightSide {
     opacity: 0;
-    transform: translateX(-100px); /* default for leftSide */
+    transform: translateX(-100px); 
     transition: all 1s ease;
 }
 
@@ -120,13 +120,234 @@ body::-webkit-scrollbar {
 
 /* skill part */
 
+.skillContainer {
+    padding-bottom: 20px;
+    
+}
+
+.skillContainer p {
+    max-width: 900px;
+    font-size: 19px;
+
+}
+
 .mySkill {
     background-color: rgb(46, 25, 81);
     padding-left: 20px;
+    padding-top: 50px;
+}
+
+.secTitle {
+    text-align: center;
+    margin-bottom: 90px;
+    font-size: 60px;
 }
 
 .imgSkill img {
     max-width: 135px;
     max-height: 135px;
     margin-right: 30px;
+    margin-bottom: 20px;
 }
+
+.linkWeb:visited {
+    color: rgb(213, 208, 208);
+}
+.linkWeb:enabled {
+    color: white;
+}
+.linkWeb:hover {
+    color: rgb(217, 215, 215);
+}
+.linkWeb {
+    color: white;
+}
+
+.gifGem {
+    max-width: 40%;
+}
+
+.gifContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 70px;
+}
+
+.miniGifTitle {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+}
+
+
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+
+.fade-in-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* skill part end */
+
+/* motto part */
+.myMotto {
+    text-align: center;
+    font-size: 30px;
+    padding-top: 50px;
+}
+
+.damnCool {
+    width: 100%;
+    height: 700px;
+    background-image: url("../background/ablack.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.damnCool h1 {
+    font-size: 70px;
+    font-family: "Space Grotesk";
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+    transition: text-shadow 0.3s ease-in-out;
+   
+}
+
+.linkedAstra {
+    text-decoration: none;
+    color: white;
+}
+
+
+.fade-slow-on-scroll {
+    opacity: 0;
+    transition: opacity 2.5s ease-in;
+}
+
+.fade-slow-on-scroll.visible {
+    opacity: 1;
+}
+
+.delay-text {
+    transition-delay: 1.2s; 
+}
+
+.damnCool h1:hover {
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
+    transition: text-shadow 0.3s ease-in-out;
+    cursor: default;
+}
+
+/* motto part end */
+
+/* contact part */
+
+.contactMe {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #0d0d0d;
+    color: white;
+}
+
+.contactMe h1 {
+    font-size: 50px;
+    margin-bottom: 60px;
+}
+
+.contactBox {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
+}
+.contactBox img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.contactBox img:hover {
+    transform: scale(1.1);
+}
+
+.contactBox p {
+    font-size: 16px;
+    margin: 0;
+    color: #ccc;
+}
+
+.midCBox {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background-color: #1a1a1a;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    border: 2px solid #ffffff25;
+    transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.midCBox:nth-child(1) {
+    z-index: 4;
+}
+.midCBox:nth-child(2) {
+    z-index: 3;
+}
+.midCBox:nth-child(3) {
+    z-index: 2;
+}
+.midCBox:nth-child(4) {
+    z-index: 1;
+}
+
+.contactBox:hover .midCBox:nth-child(1) {
+    transform: translateX(-300px);
+    opacity: 1;
+}
+.contactBox:hover .midCBox:nth-child(2) {
+    transform: translateX(-100px);
+    opacity: 1;
+}
+.contactBox:hover .midCBox:nth-child(3) {
+    transform: translateX(100px);
+    opacity: 1;
+}
+.contactBox:hover .midCBox:nth-child(4) {
+    transform: translateX(300px);
+    opacity: 1;
+}
+
+
+
+.miniCBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
