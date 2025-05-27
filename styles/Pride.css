@@ -352,3 +352,132 @@ body::-webkit-scrollbar {
 }
 
 /* contact end */
+
+/*responsive*/
+
+@media (max-width: 1024px) {
+    .contactBox:hover .midCBox:nth-child(1),
+    .contactBox:hover .midCBox:nth-child(2),
+    .contactBox:hover .midCBox:nth-child(3),
+    .contactBox:hover .midCBox:nth-child(4) {
+        transform: none;
+    }
+
+    .contactBox {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+        position: static;
+    }
+
+    .midCBox {
+        position: static;
+        width: 90%;
+        max-width: 400px;
+        margin: 10px auto;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .gifContainer, .miniGifTitle {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .gifGem {
+        max-width: 90%;
+    }
+
+    .imgSkill img {
+        max-width: 90px;
+        max-height: 90px;
+    }
+
+    .secTitle {
+        font-size: 40px;
+    }
+
+    .aboutMe h1, .contactMe h1 {
+        font-size: 40px;
+    }
+
+    .myMotto {
+        font-size: 20px;
+        padding: 40px 10px;
+    }
+
+    .damnCool h1 {
+        font-size: 40px;
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    .middleMain {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .leftSide, .rightSide {
+        width: 100%;
+        height: auto;
+    }
+
+    .miniText {
+        width: 90%;
+        font-size: 18px;
+    }
+
+    .profilepic, .picture {
+        width: 200px;
+        height: 200px;
+    }
+
+    .myName {
+        font-size: 35px;
+    }
+
+    .boxParagraf {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .damnCool h1 {
+        font-size: 30px;
+    }
+
+    .myName {
+        font-size: 28px;
+    }
+
+    .contactMe h1,
+    .secTitle,
+    .aboutMe h1 {
+        font-size: 30px;
+    }
+
+    .profilepic, .picture {
+        width: 150px;
+        height: 150px;
+    }
+
+    .imgSkill img {
+        max-width: 60px;
+        max-height: 60px;
+        margin-right: 10px;
+    }
+
+    .gifGem {
+        max-width: 100%;
+    }
+
+    .contactBox img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .midCBox {
+        width: 95%;
+    }
+}
